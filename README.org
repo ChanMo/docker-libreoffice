@@ -1,0 +1,29 @@
+* Docker Libreoffice Restful API
+
+Document Format Convert API, Generate TOC API
+
+** Usage
+
+Start API Service
+#+BEGIN_SRC bash
+  docker run --rm -p 5000:5000 chanmo/libreoffice
+#+END_SRC
+
+File Format Convert
+#+BEGIN_SRC bash
+  http -f POST :5000/convert/pdf file@/path/to/doc.docx
+#+END_SRC
+
+Generate Doc TOC
+#+BEGIN_SRC bash
+  http -f POST :5000/generate_toc file@/path/to/doc.docx
+#+END_SRC
+
+** Custom Fonts
+
+Add your font files to fonts directory, then rebuild docker image.
+
+
+** References
+
+1. https://github.com/lynxtaa/unoserver-web/blob/master/Dockerfile
